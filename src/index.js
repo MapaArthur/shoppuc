@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import routes from "./routes";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -28,18 +28,6 @@ function RouteApp() {
                             />
                         );
                     })}
-                    <Route component={() => {
-                        return (
-                            <Redirect to={{
-                                pathname: "/errors",
-                                state: { 
-                                    error: "404", 
-                                    info: "O endereço que você está tentando acessar não existe.", 
-                                    to: "/login"
-                                }
-                            }}/>
-                        );
-                    }}/>
                 </Switch>
             </div>
         </Router>
